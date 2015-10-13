@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+posts = []
+
+(1..20).each do |n|
+	posts << Post.create(title: "Post nº #{n}", content: "COmentario del post numero #{n}")
+end
+
+comments= []
+(1..50).each do |n|
+	comments << Comment.create( content: " Comentario numero #{n}", post: posts[rand(1..(posts.length))])
+end
+
+
