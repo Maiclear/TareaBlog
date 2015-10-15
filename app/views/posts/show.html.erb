@@ -17,7 +17,7 @@
 <%= form_for [@post, Comment.new] do |f| %>
 	<p> <h2>	<%= f.label :content, "Deja tu comentario:"  %></h2></p>
 	<%= f.text_area :content  %>
-	<%= f.submit "Enviar"   %>
+	<p><%= f.submit "Enviar"   %></p>
 <% end %>
 
 <h2>Comentarios:</h2>
