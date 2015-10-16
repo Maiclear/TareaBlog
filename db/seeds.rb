@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Post.destroy_all
 Comment.destroy_all
-
+Tag.destroy_all
 
 
 
@@ -39,4 +39,18 @@ comments= []
 	                         post: posts[rand(posts.length)]
 	                         )
 end
+
+tags=[]
+
+tags << Tag.create(name: 'Pop')
+tags << Tag.create(name: 'Rock')
+tags << Tag.create(name: 'Alternative')
+tags << Tag.create(name: 'Shoegaze')
+tags << Tag.create(name: 'Punk')
+tags << Tag.create(name: 'Grunge')
+tags << Tag.create(name: 'Classic')
+tags << Tag.create(name: 'Acustic')
+tags << Tag.create(name: 'Blues')
+tags << Tag.create(name: 'Jazz')
+
 
