@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments
+  has_many :posts
 
   enum role: [:admin, :editor, :user]
 
