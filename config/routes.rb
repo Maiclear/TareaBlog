@@ -3,6 +3,15 @@ Rails.application.routes.draw do
 
 
   devise_for :users
+
+  devise_scope :user do
+    get '/login' , to: 'devise/sessions#new'
+    delete '/logout', to: 'devise/sessions#destroy'
+    get '/profile' , to: 'devise/registrations#edit'
+    put '/profile' , to: 'devise/registrations#update'
+  end
+
+
   resources :posts do
     resources :comments, only: [:create]
   end
