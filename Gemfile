@@ -8,6 +8,7 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'cancancan'
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'

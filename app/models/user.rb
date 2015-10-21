@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
 
-  enum role: [:admin, :editor, :user]
+  enum role: [:admin, :editor, :basic, :guest]
 
   def default_role
     self.role ||= 2
