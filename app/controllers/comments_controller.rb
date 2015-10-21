@@ -3,10 +3,9 @@ class CommentsController < ApplicationController
   def create
   	@post = Post.find(params[:post_id])
   	# @comments = @post.comments
-
-
-  	@comments = @post.comments.build(comment_params)
-  	@comments.save
+  	@comment = @post.comments.build(comment_params)
+    @comment.user = current_user
+  	@comment.save
 
   	redirect_to @post
   end

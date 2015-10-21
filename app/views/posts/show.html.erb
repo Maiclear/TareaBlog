@@ -28,9 +28,9 @@
 
 <% @comments.each do |c| %>
 	<hr>
-	<p><small><%= time_ago_in_words c.created_at %></small></p>
+	<p><small><%= time_ago_in_words c.created_at  %></small></p>
 	<p><%= c.content  %></p>
-	<p><small><%= c.user %></small></p>
+	<p><small>Creado por: <%= c.user %></small></p>
 	<hr>
 <% end %>
 

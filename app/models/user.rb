@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def default_role
     self.role ||= 2
   end
+
+  def to_s
+    "#{self.name} #{self.last_name}"
+  end
 end
