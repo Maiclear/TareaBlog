@@ -10,10 +10,12 @@ class Ability
       can :create, :all
       can :update, [Post, Comment]
       can :destroy, [Post, Comment], user_id: user.id
+      can :like, [Post, Comment]
     elsif user.basic?
       can :read, :all
       can :create, [Post, Comment]
       can [:update, :destroy], [Post, Comment], user_id: user.id
+      can :like, [Post, Comment]
     else
       can :read, :all
     end

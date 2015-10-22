@@ -10,6 +10,16 @@
   <%= @post.content %>
 </p>
 
+<p>Likes: <strong> <%= @post.likes.count %></strong></p>
+
+<p>
+	<%= unless @post.liked_by? current_user  %>
+		<%= link_to 'Me Gusta', like_post_path(@post) %>
+	<% else %>
+		<%= link_to 'Deshacer Me gusta', like_post_path(@post)  %>
+	<% end %>
+</p>
+
 <% if can? :edit? , @post %>
 	<%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>

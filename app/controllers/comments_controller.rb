@@ -10,6 +10,21 @@ class CommentsController < ApplicationController
   	redirect_to @post
   end
 
+  def like
+    @post = Post.find(params[:post_id])
+    @comment = Post.find(params[:id])
+    @like = @comment.likes.build(user: current_user)
+
+    if @comment.liked_by? current_user
+      @comment.remove_like current_user
+      redirect_to @post, notice: 'Tu like a sido eliminado :('
+    elsif @like.save
+      redirect_to @post, notice: 'Gracias por tu like :D'
+    else
+      redirect_to @post, notice: 'Tu like no se ha guardado :('
+    end
+  end
+
 	private
 
 		def comment_params
